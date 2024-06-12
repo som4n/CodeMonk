@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="tittle">Stop Watch</h1>
+        <div class="stopwatch">
+            <div class="timer">
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>:
+                <span id="milli">00</span>
+            </div>
+            <div class="controls">
+                <button id="startb"><i class="fas fa-play"></i> Start</button>
+                <button id="stopb"><i class="fas fa-stop"></i> Stop</button>
+                <button id="pauseb"><i class="fas fa-pause"></i> Pause</button>
+                <button id="resetb"><i class="fas fa-sync-alt"></i> Reset</button>
+                <button id="lapb"><i class="fas fa-flag"></i> Lap</button>
+            </div>
+            
+            <div class="laps">
+                <h2 class="laptittle">Lap Timer</h2>
+                <ul id="laplist"></ul>
+            </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(to right, #f25f45, #e73827);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(10px); 
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle {
+    font-size: 5vw; /* Responsive font size */
+    margin-bottom: 1.5rem;
+}
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.timer {
+    font-size: 5vw; /* Responsive font size */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    animation: pulse 1.5s infinite alternate;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.timer span {
+    width: 30%; /* Responsive width */
+    display: inline-block;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to next row */
+    justify-content: center; /* Center align buttons */
+    gap: 1rem;
+}
+
+button {
+    padding: 2vw 4vw; /* Responsive padding */
+    font-size: 2vw; /* Responsive font size */
+    background-color: rgb(248, 76, 76);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(116, 27, 27);
+}
+
+.lap-title {
+    font-size: 3vw; /* Responsive font size */
+}
+
+.laps {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    padding: 2vw; /* Responsive padding */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li span {
+    font-weight: 700;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .tittle {
+        font-size: 6vw;
+    }
+
+    .timer {
+        font-size: 5vw;
+    }
+
+    .timer span {
+        width: 50%;
+    }
+
+    .controls {
+        gap: 0.3rem;
+    }
+
+    button {
+        padding: 2vw 4vw;
+        font-size: 2vw;
+    }
+
+    .lap-title {
+        font-size: 2vw;
+    }
+
+    li {
+        padding: 2vw;
+    }
+}
