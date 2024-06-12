@@ -1,23 +1,11 @@
-# CodeMonk
-# Stopwatch Application
+# CodeMonk Projects
 
-This is a basic stopwatch application built with HTML, CSS, and JavaScript.
+This repository contains various small projects developed using HTML, CSS, and JavaScript.
 
-## Features
+## Projects
 
-- **Start**: Begin timing.
-- **Stop**: Pause the timing.
-- **Reset**: Reset the stopwatch to zero.
-- **Lap**: Record lap times.
+- [Stopwatch](https://som4n.github.io/CodeMonk/Timer/)
+- [Project 2](https://som4n.github.io/CodeMonk/project2/) inprogress
+- [Project 3](https://som4n.github.io/CodeMonk/project3/) inprogress
 
-## Usage
-
-1. Visit the [hosted application](https://yourusername.github.io/stopwatch-project/).
-2. Use the buttons to control the stopwatch.
-
-## Repository Structure
-
-- `index.html`: The main HTML file.
-- `style.css`: The CSS file for styling the application.
-- `script.js`: The JavaScript file for the stopwatch functionality.
-
+Each project is located in its respective directory and can be accessed through the provided links.
