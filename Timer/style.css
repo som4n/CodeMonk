@@ -5,6 +5,9 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -16,11 +19,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 90%;
+    margin: auto;
 }
 
-.tittle {
-    font-size: 5vw; /* Responsive font size */
+.title {
+    font-size: 3rem; /* Adjusted to rem for consistency */
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .stopwatch {
@@ -31,32 +37,26 @@ body {
 }
 
 .timer {
-    font-size: 5vw; /* Responsive font size */
+    font-size: 2rem; /* Adjusted to rem for consistency */
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-    animation: pulse 1.5s infinite alternate;
     white-space: nowrap;
-    display: inline-block;
-}
-
-.timer span {
-    width: 30%; /* Responsive width */
     display: inline-block;
     text-align: center;
 }
 
 .controls {
     display: flex;
-    flex-wrap: wrap; /* Wrap buttons to next row */
-    justify-content: center; /* Center align buttons */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 }
 
 button {
-    padding: 2vw 4vw; /* Responsive padding */
-    font-size: 2vw; /* Responsive font size */
+    padding: 1rem 2rem; /* Adjusted for consistency */
+    font-size: 1rem; /* Adjusted for consistency */
     background-color: rgb(248, 76, 76);
     color: white;
     border: none;
@@ -70,11 +70,14 @@ button:hover {
 }
 
 .lap-title {
-    font-size: 3vw; /* Responsive font size */
+    font-size: 1.5rem; /* Adjusted for consistency */
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .laps {
     width: 100%;
+    max-width: 600px; /* Added max-width for better control */
 }
 
 ul {
@@ -89,7 +92,7 @@ ul {
 }
 
 li {
-    padding: 2vw; /* Responsive padding */
+    padding: 1rem; /* Adjusted for consistency */
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -103,32 +106,28 @@ li span {
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-    .tittle {
-        font-size: 6vw;
+    .title {
+        font-size: 4rem;
     }
 
     .timer {
-        font-size: 5vw;
-    }
-
-    .timer span {
-        width: 50%;
+        font-size: 3rem;
     }
 
     .controls {
-        gap: 0.3rem;
+        gap: 0.5rem;
     }
 
     button {
-        padding: 2vw 4vw;
-        font-size: 2vw;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 
     .lap-title {
-        font-size: 2vw;
+        font-size: 2rem;
     }
 
     li {
-        padding: 2vw;
+        padding: 0.5rem;
     }
 }
