@@ -32,6 +32,7 @@ function laptimer(){
 }
 
 function stoptimer(){
+    clearInterval(interval);
     laptimer()
     resettimerdata();
     startb.disabled=false;
