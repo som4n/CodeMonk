@@ -26,7 +26,7 @@ function starttimer () {
    startb.disabled=true;
 }
 function laptimer(){
-    clearInterval(interval);
+    //clearInterval(interval);
     addlaplist();
     startb.disabled=false;
 }
