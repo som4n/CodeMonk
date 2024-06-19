@@ -32,9 +32,10 @@ function laptimer(){
 }
 
 function stoptimer(){
+    addlaplist();
     clearInterval(interval);
-    laptimer()
     resettimerdata();
+    stopb.disabled=true;
     startb.disabled=false;
 
 }
@@ -46,6 +47,7 @@ function pausetimer(){
 function resettimer(){
     clearInterval(interval);
     resettimerdata();
+    clearlaplist();
     startb.disabled=false;
 }
 
@@ -79,13 +81,17 @@ function resettimerdata(){
     seconds =0;
     milli=0;
     displaytimer();
-
+    
 }
-
 function addlaplist(){
     const laptime=`${padtime(minutes)}:${padtime(seconds)}:${padtime(milli)}`;
 
     const listitem = document.createElement(`li`);
     listitem.innerHTML = `<span>lap ${laplist.childElementCount+1}:</span> ${laptime}`;
     laplist.appendChild(listitem);
+}
+function clearlaplist(){
+    while (laplist.firstChild) {
+        laplist.removeChild(laplist.firstChild);
+    }
 }
