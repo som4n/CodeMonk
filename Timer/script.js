@@ -1,6 +1,6 @@
 const minutesLabel = document.getElementById('minutes');
-const secondLabel=document.getElementById('seconds');
-const milliLabel=document.getElementById('milli');
+const secondLabel = document.getElementById('seconds');
+const milliLabel = document.getElementById('milli');
 
 const startb = document.getElementById('startb');
 const stopb = document.getElementById('stopb');
@@ -10,52 +10,63 @@ const lapb = document.getElementById('lapb');
 const laplist = document.getElementById('laplist');
 
 let minutes = 0;
-let seconds= 0;
-let milli =0;
+let seconds = 0;
+let milli = 0;
 
 let interval;
 
-startb.addEventListener('click',starttimer);
-stopb.addEventListener('click',stoptimer);
-pauseb.addEventListener('click',pausetimer);
-resetb.addEventListener('click',resettimer);
-lapb.addEventListener('click',laptimer)
+startb.addEventListener('click', starttimer);
+stopb.addEventListener('click', stoptimer);
+pauseb.addEventListener('click', pausetimer);
+resetb.addEventListener('click', resettimer);
+lapb.addEventListener('click', laptimer);
 
-function starttimer () {
-   interval = setInterval(updatetimer,10);
-   startb.disabled=true;
+function starttimer() {
+    interval = setInterval(updatetimer, 10);
+    startb.disabled = true;
+    stopb.disabled = false;
+    pauseb.disabled = false;
+    lapb.disabled = false;
 }
-function laptimer(){
-    clearInterval(interval);
+
+function laptimer() {
     addlaplist();
-    startb.disabled=false;
 }
 
-function stoptimer(){
-    laptimer()
-    resettimerdata();
-    startb.disabled=false;
-
-}
-function pausetimer(){
-    clearInterval(interval);
-    startb.disabled=false;
-}
-
-function resettimer(){
+function stoptimer() {
+    addlaplist();
     clearInterval(interval);
     resettimerdata();
-    startb.disabled=false;
+    stopb.disabled = true;
+    startb.disabled = false;
+    pauseb.disabled = true;
+    lapb.disabled = true;
 }
 
+function pausetimer() {
+    clearInterval(interval);
+    startb.disabled = false;
+    stopb.disabled = false;
+    pauseb.disabled = true;
+}
 
-function updatetimer () {
+function resettimer() {
+    clearInterval(interval);
+    resettimerdata();
+    clearlaplist();
+    startb.disabled = false;
+    stopb.disabled = true;
+    pauseb.disabled = true;
+    lapb.disabled = true;
+}
+
+function updatetimer() {
     milli++;
-    if (milli === 100){
-        milli=0;
+    if (milli === 100) {
+        milli = 0;
         seconds++;
-        if (seconds === 60){
-            seconds=0;
+        if (seconds === 60) {
+            seconds = 0;
             minutes++;
         }
     }
@@ -68,23 +79,26 @@ function displaytimer() {
     minutesLabel.textContent = padtime(minutes);
 }
 
-
-function padtime(time){
-    return time.toString().padStart(2,'0');
+function padtime(time) {
+    return time.toString().padStart(2, '0');
 }
 
-function resettimerdata(){
-    minutes =0;
-    seconds =0;
-    milli=0;
+function resettimerdata() {
+    minutes = 0;
+    seconds = 0;
+    milli = 0;
     displaytimer();
-
 }
 
-function addlaplist(){
-    const laptime=`${padtime(minutes)}:${padtime(seconds)}:${padtime(milli)}`;
-
-    const listitem = document.createElement(`li`);
-    listitem.innerHTML = `<span>lap ${laplist.childElementCount+1}:</span> ${laptime}`;
+function addlaplist() {
+    const laptime = `${padtime(minutes)}:${padtime(seconds)}:${padtime(milli)}`;
+    const listitem = document.createElement('li');
+    listitem.innerHTML = `<span>lap ${laplist.childElementCount + 1}:</span> ${laptime}`;
     laplist.appendChild(listitem);
+}
+
+function clearlaplist() {
+    while (laplist.firstChild) {
+        laplist.removeChild(laplist.firstChild);
+    }
 }
