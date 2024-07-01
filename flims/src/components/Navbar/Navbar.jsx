@@ -2,18 +2,19 @@ import React ,{useState} from "react";
 
 import { AppBar,IconButton,Toolbar,Drawer,Button,Avatar, useMediaQuery } from "@mui/material";
 import { Menu, AccountCircle, Brightness4,Brightness7} from '@mui/icons-material';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { useTheme } from "@mui/material/styles";
 
-import { Sidebar } from '..'
+import { Sidebar } from '..';
+import useStyles from './styles';
 
-import useStyles from './styles'
 const Navbar =() => {
     const [mobileopen, setmobileopen] = useState(false);
     const classes = useStyles();
-    const isMobile = useMediaQuery('(max-width:600px)')
+    const isMobile = useMediaQuery('(max-width:600px)');
     const theme = useTheme();
     const isAuthendicated = true;
+
     return (
         <>
         <AppBar position="fixed">
