@@ -1,11 +1,12 @@
-import {configureStore } from '@reduxjs/toolkit';
-import { tmdbApi } from '../services/TMDB';
+import { configureStore } from '@reduxjs/toolkit';
+import { omdbApi } from '../services/OMDB';
 
-
-const store = configureStore ({
+const store = configureStore({
     reducer: {
-        [tmdbApi.reducerPath]: tmdbApi.reducer,
-      },
+        [omdbApi.reducerPath]: omdbApi.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(omdbApi.middleware),
 });
 
 export default store;
